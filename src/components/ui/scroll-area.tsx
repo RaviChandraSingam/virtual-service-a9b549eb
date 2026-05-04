@@ -1,11 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
-export function ScrollArea({ children, className }: { children: React.ReactNode; className?: string }) {
+function ScrollArea({ children, className }: { children?: React.ReactNode; className?: string }) {
   return (
-    <div className={className} style={{ overflow: 'auto' }}>
+    <div className={cn("overflow-auto", className)}>
       {children}
     </div>
   );
 }
 
-export function ScrollBar() { return null; }
+function ScrollBar({ orientation }: { orientation?: string }) { return null; }
+
+export { ScrollArea, ScrollBar };
